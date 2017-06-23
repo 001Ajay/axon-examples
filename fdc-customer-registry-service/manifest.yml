@@ -1,0 +1,15 @@
+---
+applications:
+- name: demo-customer-registry-service
+  memory: 1024M
+  instances: 1
+  host: fdc-customer-registry-service
+  domain: cfapps.io
+  path: target/fdc-customer-registry-service-0.0.1-SNAPSHOT.jar
+  services:
+    - service-read-store
+    - event-bus
+  env:
+    SPRING_PROFILES_ACTIVE: cloud
+    DEBUG: "true"
+    debug: "true"

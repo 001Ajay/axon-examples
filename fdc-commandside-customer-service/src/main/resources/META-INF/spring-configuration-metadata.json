@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "fdc.integration.employer-registration-queue",
+  "type": "java.lang.String",
+  "description": "A description for employer registration queue name, ideally should be configured in config service"
+}]}

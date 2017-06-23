@@ -1,0 +1,15 @@
+---
+applications:
+- name: demo-employer-registration
+  memory: 1024M
+  instances: 1
+  host: employer-registration
+  domain: cfapps.io
+  path: target/fdc-employer-registration-0.0.1-SNAPSHOT.jar
+  services:
+    - fdc_employer_registration_saga
+    - event-bus
+  env:
+    SPRING_PROFILES_ACTIVE: cloud
+    DEBUG: "true"
+    debug: "true"

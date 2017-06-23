@@ -1,0 +1,11 @@
+---
+applications:
+- name: eureka-service
+  memory: 512M
+  instances: 1
+  host: fdc-local-eureka-server
+  domain: cfapps.io
+  path: target/fdc-local-eureka-server-0.0.1-SNAPSHOT.jar
+  env:
+    DEBUG: "true"
+    debug: "true"

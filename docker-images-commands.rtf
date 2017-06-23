@@ -1,0 +1,161 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 Consolas;\f1\fmodern\fcharset0 CourierNewPSMT;\f2\fnil\fcharset0 Monaco;
+\f3\fnil\fcharset0 Menlo-Regular;\f4\fmodern\fcharset0 CourierNewPS-BoldMT;\f5\fswiss\fcharset0 ArialMT;
+}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red246\green246\blue246;\red38\green38\blue38;
+\red27\green29\blue31;\red235\green236\blue237;\red26\green26\blue26;\red255\green255\blue255;\red0\green200\blue50;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f0\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 docker run -d --hostname my-rabbit -p 15672:15672 \'97name\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f1\fs26 \cf2 docker run \'97it \\\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf4 \cb1 \outl0\strokewidth0 	--name fdc-employer-registration \\\
+	--link fdc-mysql:mysql \\\
+    -p 
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 6666
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+:
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 6666
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+ \\\
+\cf2 \cb3 \outl0\strokewidth0 \strokec2 	
+\f3\fs22 \cf0 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 fdc/fdc-employer-registration:latest\
+
+\f1\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 docker 
+\f4\b \cb1 run
+\f1\b0  \\\
+	-d \\\
+    --name fdc-employer-registration \\\
+    --link fdc-mysql:mysql \\\
+    -p 
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 6666
+\f1\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 :
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 6666
+\f1\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  \\\
+    -e DATABASE_HOST=
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 192.168.99.100
+\f1\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  \\\
+    -e DATABASE_PORT=3306 \\\
+    -e DATABASE_NAME=
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 fdc_employer_registration_saga
+\f1\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  \\\
+    -e DATABASE_USER=fdc \\\
+    -e DATABASE_PASSWORD=fdc \\\
+    -e 
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 RABBIT_HOST=192.168.99.100 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+\\
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+    -e 
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 RABBIT_PORT=5672 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+\\
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+    -e 
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 RABBIT_USER=guest 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+\\
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+    -e 
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 RABBIT_PASSWORD=guest 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+\\
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+    -e 
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 EUREKA_HOST=192.168.99.100 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+\\
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+    -e 
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 EUREKA_PORT=8761 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+\\\cf2 \outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2     
+\f3\fs22 \cf0 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 fdc/fdc-employer-registration:latest\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\fs26 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec5 GRANT ALL PRIVILEGES ON root.* TO '
+\f2\fs22 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 fdc_employer_registration_saga
+\f0\fs26 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \'92@\'91%\'92 IDENTIFIED BY \'91rana1970\'92;\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f5 \cf7 \cb8 \strokec7 CREATE USER 'fdc'@'%' IDENTIFIED BY 'fdc'\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf7 GRANT ALL PRIVILEGES ON * . * TO 'fdc'@'%';\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs22 \cf9 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 mysql:\cf0 \
+  \cf9 build:\cf0  ./docker/mysql\
+  \cf9 ports:\cf0 \
+    - "3306:3306"\
+    - "33060:33060"\
+  \cf9 environment:\cf0 \
+    \cf9 MYSQL_ROOT_PASSWORD:\cf0  rana1970\
+    \cf9 DATABASE_USER:\cf0  fdc\
+    \cf9 DATABASE_PASSWORD:\cf0  fdc\
+    \cf9 SAGA_DATABASE_NAME:\cf0  EmployerRegistrationSaga\
+\
+rabbitmq:\
+  \cf9 image:\cf0  rabbitmq:latest\
+  \cf9 ports:\cf0 \
+    - "5672:5672"\
+    - "15672:15672"\
+\
+eureka:\
+  \cf9 image:\cf0  fdc/fdc-local-eureka-server:latest\
+  \cf9 ports:\cf0 \
+    - "8761:8761"\
+\
+\cf9 employer-registration-saga:\cf0 \
+  \cf9 image:\cf0  fdc/fdc-employer-registration:latest\
+  \cf9 ports:\cf0 \
+    - "6666:8080"\
+  \cf9 links:\cf0 \
+    - rabbitmq\
+    - mysql\
+    - eureka\
+  \cf9 environment:\cf0 \
+    \cf9 DATABASE_HOST:\cf0  192.168.99.100\
+    \cf9 DATABASE_PORT:\cf0  3306\
+    \cf9 DATABASE_NAME:\cf0  EmployerRegistration\
+    \cf9 DATABASE_USER:\cf0  fdc\
+    \cf9 DATABASE_PASSWORD:\cf0  fdc\
+    \cf9 RABBIT_HOST:\cf0  192.168.99.100\
+    \cf9 RABBIT_PORT:\cf0  5672\
+    \cf9 RABBIT_USER:\cf0  guest\
+    \cf9 RABBIT_PASSWORD:\cf0  guest\
+    \cf9 EUREKA_HOST:\cf0  192.168.99.100\
+    \cf9 EUREKA_PORT:\cf0  8761}

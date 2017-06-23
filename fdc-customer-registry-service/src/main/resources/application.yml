@@ -1,0 +1,53 @@
+spring:
+  profiles:
+    active: local
+---
+spring:
+  profiles: local
+  application:
+    name: fdc-customer-registry-service
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: fdc
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+server:
+  port: 3535
+logging:
+  level:
+    org.springframework.web: ERROR
+    org.springframework.controllers: ERROR
+    com.fdc: DEBUG
+    org.hibernate: ERROR
+management:
+  security:
+     enabled: false    
+security:
+  basic:
+    enabled: false
+---
+spring:
+  profiles: cloud
+  application:
+    name: fdc-customer-registry-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://fdc-local-eureka-server.cfapps.io/eureka
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.controllers: DEBUG
+    com.fdc: DEBUG
+    org.hibernate: DEBUG
+management:
+  security:
+     enabled: false    
+security:
+  basic:
+    enabled: false

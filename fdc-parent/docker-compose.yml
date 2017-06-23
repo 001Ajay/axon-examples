@@ -1,0 +1,44 @@
+
+
+mysql:
+  build: ./docker/mysql
+  ports:
+    - "3306:3306"
+    - "33060:33060"
+  environment:
+    MYSQL_ROOT_PASSWORD: rana1970
+    DATABASE_USER: fdc
+    DATABASE_PASSWORD: fdc
+    SAGA_DATABASE_NAME: EmployerRegistrationSaga
+
+rabbitmq:
+  image: rabbitmq:latest
+  ports:
+    - "5672:5672"
+    - "15672:15672"
+
+eureka:
+  image: fdc/fdc-local-eureka-server:latest
+  ports:
+    - "8761:8761"
+
+employer-registration-saga:
+  image: fdc/fdc-employer-registration:latest
+  ports:
+    - "6666:8080"
+  links:
+    - rabbitmq
+    - mysql
+    - eureka
+  environment:
+    DATABASE_HOST: 192.168.99.100
+    DATABASE_PORT: 3306
+    DATABASE_NAME: EmployerRegistrationSaga
+    DATABASE_USER: fdc
+    DATABASE_PASSWORD: fdc
+    RABBIT_HOST: 192.168.99.100
+    RABBIT_PORT: 5672
+    RABBIT_USER: guest
+    RABBIT_PASSWORD: guest
+    EUREKA_HOST: 192.168.99.100
+    EUREKA_PORT: 8761

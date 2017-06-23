@@ -1,0 +1,107 @@
+spring:
+  profiles:
+    active: local
+---
+spring:
+  profiles: local
+  application:
+    name: fdc-commandside-scheme-service
+  datasource:
+    url: jdbc:mysql://localhost/fdc_scheme_eventstore
+    username: root
+    password: rana1970
+    max-active: 5
+    validation-query: select 1    
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+server:
+  port: 5555
+axon:
+  amqp:
+    exchange: FDC-SCHEME-EXCHANGE
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.controllers: DEBUG
+    com.fdc: DEBUG
+    org.hibernate: DEBUG
+management:
+  security:
+     enabled: false    
+security:
+  basic:
+    enabled: false
+---
+spring:
+  profiles: container
+  application:
+    name: fdc-commandside-scheme-service
+  datasource:
+    url: jdbc:mysql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    max-active: 5
+    validation-query: select 1    
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+  rabbitmq:
+    host: ${RABBIT_HOST}
+    port: ${RABBIT_PORT}
+    username: ${RABBIT_USER}
+    password: ${RABBIT_PASSWORD}
+server:
+  port: 7777
+axon:
+  amqp:
+    exchange: FDC-SCHEME-EXCHANGE
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOST}:${EUREKA_PORT}/eureka/
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.controllers: DEBUG
+    com.fdc: DEBUG
+    org.hibernate: DEBUG
+management:
+  security:
+     enabled: false    
+security:
+  basic:
+    enabled: false
+---
+spring:
+  profiles: cloud
+  application:
+    name: fdc-commandside-scheme-service
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.controllers: DEBUG
+    com.fdc: DEBUG
+    org.hibernate: DEBUG
+axon:
+  amqp:
+    exchange: FDC-SCHEME-EXCHANGE
+management:
+  security:
+     enabled: false    
+security:
+  basic:
+    enabled: false
